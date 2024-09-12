@@ -30,7 +30,7 @@ function App() {
         return axios.get(forecastUrl);
       })
       .then((forecastResponse) => {
-        const currentWeather = forecastResponse.data.properties.periods[0]; // Get current weather period
+        const currentWeather = forecastResponse.data.properties.periods[0];
         setWeather({
           temperature: `${currentWeather.temperature}°${currentWeather.temperatureUnit}`,
           shortForecast: currentWeather.shortForecast,
@@ -42,6 +42,9 @@ function App() {
 
   return (
     <div className="App">
+      <div>
+        <h1>Los Angeles</h1>
+      </div>
       {weather ? (
         <div className="weatherContainer">
           <h3>Temperature: {weather.temperature}</h3>
@@ -49,7 +52,7 @@ function App() {
           <p>Full Details: {weather.detailedForecast}</p>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p>Designed by Blessingkeyz</p>
       )}
     </div>
   );
